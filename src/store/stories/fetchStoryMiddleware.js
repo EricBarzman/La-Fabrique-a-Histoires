@@ -1,4 +1,4 @@
-import { updateCurrentStory, loadBlock, updateField } from './gameSlice';
+import { updateCurrentStory, loadBlock, updateField } from '../gameSlice';
 
 /**
  * @param {selectedStoryId} store

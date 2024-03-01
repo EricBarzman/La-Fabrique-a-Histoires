@@ -3,13 +3,13 @@ import userSlice from './userSlice';
 import gameSlice from './gameSlice';
 import gameOptionsSlice from './gameOptionsSlice';
 import authMiddleware from './authMiddleware';
-import fetchAllStoriesMiddleware from './fetchAllStoriesMiddleware';
-import fetchStoryMiddleware from './fetchStoryMiddleware';
+import fetchAllStoriesMiddleware from './stories/fetchAllStoriesMiddleware';
+import fetchStoryMiddleware from './stories/fetchStoryMiddleware';
 import saveStoryMiddleWare from './savedStories/saveStoryMiddleware';
 import fetchSavedStoryMiddleware from './savedStories/fetchSavedStoryMiddleware';
 import deleteSavedStoryMiddleware from './savedStories/deleteSavedStoryMiddleware';
 import myStoriesSlice from './myStoriesSlice';
-import fetchThemesMiddleware from './fetchThemesMiddleware';
+import fetchThemesMiddleware from './stories/fetchThemesMiddleware';
 import userMiddleware from './userMiddleware';
 
 const store = configureStore({

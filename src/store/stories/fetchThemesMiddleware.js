@@ -1,4 +1,4 @@
-import { updateThemes } from './gameOptionsSlice';
+import { updateThemes } from '../gameOptionsSlice';
 
 /**
  * Va chercher sur l'API en BACK les données de tous les thèmes

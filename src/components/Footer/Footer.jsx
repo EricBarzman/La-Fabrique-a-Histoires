@@ -4,24 +4,15 @@ import { MenuMenu, MenuItem, Menu } from 'semantic-ui-react';
 
 function Footer() {
   return (
-    <Menu secondary className="footer">
-      <div className="footer__center">
-        <MenuMenu position="left">
-          <MenuItem
-            name="Copyright 2024 La Fabrique à Histoires"
-            className="white copyright"
-          />
-        </MenuMenu>
-        <MenuMenu position="right">
-          <Link to="/politique-confidentialite">
-            <MenuItem name="Politique de confidentialité" className="link" />
-          </Link>
-          <Link to="/contact">
-            <MenuItem name="Contact" className="link" />
-          </Link>
-        </MenuMenu>
+      <div className="footer">
+        <div className="footer__copyright">
+          Copyright 2024 La Fabrique à Histoires
+        </div>
+        <div className="footer__links">
+          <Link className='footer__links-element' to="/politique-confidentialite">Politique de confidentialité</Link> 
+          <Link className='footer__links-element' to="/contact">Contact</Link>
+        </div>      
       </div>
-    </Menu>
   );
 }
 

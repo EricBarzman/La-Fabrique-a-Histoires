@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
 import { createSlice } from '@reduxjs/toolkit';
 
 const loadingState = () => {
@@ -17,8 +16,8 @@ export const initialState = loadingState() || {
   logged: false,
   firstname: '',
   lastname: '',
+  avatar_path: '',
   mail: '',
-  password: '',
   token: null,
   loginError: null, // Ajout d'une propriété loginError pour gérer les erreurs de connexion
 };
@@ -30,13 +29,12 @@ const userSlice = createSlice({
     handleSuccessfulLogin: (state, action) => {
       const newState = {
         ...state,
-
-        logged: true, // passe à true pour indiquer que l'utilisateur est connecté
+        logged: true,
         firstname: action.payload.firstname,
         lastname: action.payload.lastname,
         mail: action.payload.mail,
         password: action.payload.password,
-        token: action.payload.token, // s'assurer de recevoir un token depuis l'API
+        token: action.payload.token,
         loginError: null,
       };
       localStorage.setItem('user', JSON.stringify(newState.user));
@@ -44,10 +42,7 @@ const userSlice = createSlice({
     },
 
     updateUser(state, action) {
-      // Fusionne les nouvelles données de l'utilisateur avec le state existant
-      // Met à jour les informations de l'utilisateur dans localStorage
       localStorage.setItem('user', JSON.stringify(action.payload));
-      // Retourne le nouvel état
       return {
         ...state,
         ...action.payload,
@@ -55,14 +50,13 @@ const userSlice = createSlice({
     },
 
     handleLogout: (state) => {
-      state.logged = false; // mettre à jour l'état de connexion
-      state.firstname = ''; // remettre à zéro les infos utilisateur
+      state.logged = false;
+      state.firstname = '';
       state.lastname = '';
       state.mail = '';
+      state.avatar_path = '';
       state.token = '';
-      state.password = '';
       localStorage.removeItem('user'); // supprimer les données utilisateur du stockage local
-
       return state;
     },
 
@@ -94,9 +88,6 @@ const userSlice = createSlice({
 
       // Je prépare le nouveau message a ajouter au state
       const newUser = {
-        id: uuidv4(), // on genere un id unique
-        // utilisation de la syntaxe raccourcie pour définir les propriétés de newUser. demande ESLINT
-        // fonctionne parce que les variables mail, firstname, lastname, password et avatar ont le même nom que les clés que vous voulez leur donner dans l'objet newUser.
         mail,
         firstname,
         lastname,

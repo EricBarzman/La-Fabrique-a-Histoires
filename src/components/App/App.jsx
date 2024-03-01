@@ -18,7 +18,7 @@ import 'semantic-ui-css/semantic.min.css';
 function App() {
   const location = useLocation();
   return (
-    <div className="container">
+    <div className="app-container">
       {location.pathname !== '/jeux' ? <Header /> : null}
       <div className="container__game">
         <Routes>

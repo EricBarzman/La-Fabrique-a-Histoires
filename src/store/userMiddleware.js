@@ -8,7 +8,6 @@ const userMiddleware = (store) => (next) => (action) => {
   const { token } = state.user;
 
   if (action.type === 'UPDATE_USER') {
-    console.log('This is mw logs /!');
     fetch(`http://localhost:3000/users/`, {
       method: 'PATCH',
       headers: {
@@ -19,13 +18,11 @@ const userMiddleware = (store) => (next) => (action) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         store.dispatch(updateUser(data));
       });
   }
 
   if (action.type === 'DELETE_USER') {
-    console.log('This is mw logs / DELETE!');
     fetch(`http://localhost:3000/users/`, {
       method: 'DELETE',
       headers: {
@@ -34,11 +31,9 @@ const userMiddleware = (store) => (next) => (action) => {
       },
     })
       .then((res) => {
-        console.log('This is mw logs / DELETE!', res);
         return res.json();
       })
       .then((data) => {
-        console.log(data);
         store.dispatch(deleteUser(data));
       });
   }

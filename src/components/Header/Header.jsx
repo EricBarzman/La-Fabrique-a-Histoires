@@ -11,16 +11,15 @@ import Connexion from '../Modales/Connexion/Connexion';
 import Inscription from '../Modales/Inscription/Inscription';
 import Aide from '../Modales/Aide/Aide';
 import logo from '/assets/elements/logo-horizontal-transparent_250px.png'
+import BurgerMenu from './BurgerMenu';
 
 function Header() {
   const [helpOpen, setHelpOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false); // État pour vérifier si c'est un écran mobile
-  const [menuOpen, setMenuOpen] = useState(false); // État pour contrôler l'ouverture/fermeture du menu burger
+  const [isMobile, setIsMobile] = useState(false); // Téléphone
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // Utilisez useSelector pour accéder à la valeur de 'logged' depuis le store Redux
-  const logged = useSelector((state) => state.user.logged);
+  const isLogged = useSelector((state) => state.user.logged);
 
   const handleLogoutClick = () => {
     dispatch(handleLogout()); // Utilisez la fonction importée depuis userSlice
@@ -33,16 +32,13 @@ function Header() {
     setHelpOpen(!helpOpen);
   };
 
-  const handleMenuItemClick = () => {
-    // Ferme le menu burger lorsque l'on clique sur un item
-    setMenuOpen(false);
-  };
-
+  // Active le mode responsive mobile
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 767); // Met à jour l'état isMobile en fonction de la largeur de l'écran
     };
-    window.addEventListener('resize', handleResize); // Ajoute un écouteur d'événements pour le redimensionnement de la fenêtre
+    // Ajoute un écouteur d'événements pour redimensionner la fenêtre
+    window.addEventListener('resize', handleResize); 
 
     // Nettoyage de l'écouteur d'événements lors du démontage du composant
     return () => {
@@ -52,26 +48,6 @@ function Header() {
 
   return (
     <Menu stackable className="menu" id="menu">
-      <MenuMenu position="left">
-        {!isMobile && (
-          <MenuItem name="Accueil" className="link desktop">
-            <Link to="/">
-              <Icon name="home" color="white" alt="home icon" size="big" />
-            </Link>
-          </MenuItem>
-        )}
-        {logged &&
-          !isMobile && ( // Vérifiez si l'utilisateur n'est pas connecté et que ce n'est pas un appareil mobile
-            <MenuItem name="MesHistoiresDesktop" className="link">
-              <Link to="/mes_histoires">
-                <Icon name="book" color="white" alt="book icon" size="big" />
-              </Link>
-            </MenuItem>
-          )}
-        <Menu.Item onClick={toggleHelp}>
-          <Aide />
-        </Menu.Item>
-      </MenuMenu>
 
       <MenuMenu className="logo">
         <MenuItem>
@@ -81,130 +57,52 @@ function Header() {
         </MenuItem>
       </MenuMenu>
 
-      {/* Affichez le menu burger si c'est un écran mobile */}
-      {isMobile && (
-        <MenuMenu position="left_mobile">
-          <div id="hamburger-menu">
-            <input
-              id="menu__toggle"
-              type="checkbox"
-              hidden
-              checked={menuOpen}
-              onChange={() => setMenuOpen(!menuOpen)}
-            />
-            <label className="menu__btn" htmlFor="menu__toggle">
-              <span> </span>
-            </label>
-            <ul className="menu__box">
-              <h2 className="title">Menu</h2>
-              {!logged && ( // Affiche le bouton "Connexion" si l'utilisateur n'est pas connecté
-                <li>
-                  <p className="menu__item" onClick={handleMenuItemClick}>
-                    <Connexion className="menu__item" id="connexion-mobile" />
-                    {/* si pas dans p, le onClick ne fonctionne plus */}
-                  </p>
-                </li>
-              )}
-              <span>
-                {logged ? (
-                  <>
-                    <MenuItem name="Profil" onClick={handleMenuItemClick}>
-                      <Link to="/Profil">
-                        <span>
-                          <p className="menu__item">Profil</p>
-                          <Icon
-                            name="user circle"
-                            color="grey"
-                            alt="user circle icone"
-                            size="large"
-                          />
-                        </span>
-                      </Link>
-                    </MenuItem>
+      <MenuMenu >  
+        {isLogged && (
+            <MenuItem name="MesHistoiresDesktop" className="link">
+              <Link to="/mes_histoires">
+                <img className='header__mes-histoires-icon' src="/assets/elements/favicon-ss-bg.ico" alt="mes-histoires-icon" />
+              </Link>
+            </MenuItem>
+        )}
+        
+        {!isMobile && (
+          <Menu.Item onClick={toggleHelp}>
+            <Aide />
+          </Menu.Item>
+        )}
 
-                    <MenuItem name="MesHistoires" onClick={handleMenuItemClick}>
-                      <Link to="/mes_histoires">
-                        <span>
-                          <p className="menu__item">Mes Histoires</p>
-                          <Icon
-                            name="book"
-                            color="grey"
-                            alt="book icone"
-                            size="large"
-                          />
-                        </span>
-                      </Link>
-                    </MenuItem>
+      </MenuMenu>
 
-                    <MenuItem onClick={handleLogoutClick}>
-                      <p className="menu__item" onClick={handleMenuItemClick}>
-                        Déconnexion
-                      </p>
-                    </MenuItem>
-                  </>
-                ) : (
-                  <li>
-                    <p onClick={handleMenuItemClick} className="menu__item">
-                      <Inscription />
-                    </p>
-                  </li>
-                )}
-              </span>
-              <MenuItem
-                name="Contact"
-                className="link"
-                onClick={handleMenuItemClick}
-              >
-                <Link to="/contact">
-                  <p className="menu__item">Contact</p>
-                </Link>
-              </MenuItem>
-              <MenuItem
-                name="Politique"
-                className="link"
-                onClick={handleMenuItemClick}
-              >
-                <Link to="/politique-confidentialite">
-                  <p className="menu__item">Politique de Confidentialité</p>
-                </Link>
-              </MenuItem>
-            </ul>
-          </div>
-        </MenuMenu>
-      )}
-
-      {!isMobile && ( // Affiche le menu normal sur les appareils non mobiles
-        <MenuMenu position="right">
-          {logged ? (
-            <>
-              <MenuItem
-                name="Déconnexion"
-                className="btn btn_cream"
-                onClick={handleLogoutClick}
+      {isLogged ? (
+        <MenuMenu position="right" >
+          <MenuItem
+            name="Déconnexion"
+            className="btn btn_cream"
+            onClick={handleLogoutClick}
+          />
+          <MenuItem name="Profil" className="link">
+            <Link to="/profil">
+              <Icon
+                name="user circle"
+                color="white"
+                alt="user circle icone"
+                size="big"
               />
-              <MenuItem name="Profil" className="link">
-                <Link to="/profil">
-                  <Icon
-                    name="user circle"
-                    color="white"
-                    alt="user circle icone"
-                    size="big"
-                  />
-                </Link>
-              </MenuItem>
-            </>
-          ) : (
-            <>
-              <MenuItem name="Connexion" className="btn btn_cream">
-                <Connexion />
-              </MenuItem>
-              <MenuItem name="Inscription" className="btn btn_cream">
-                <Inscription />
-              </MenuItem>
-            </>
-          )}
+            </Link>
+          </MenuItem>
+        </MenuMenu>
+      ) : (
+        <MenuMenu position="right" >
+          <MenuItem name="Connexion" className="btn btn_cream">
+            <Connexion />
+          </MenuItem>
+          <MenuItem name="Inscription" className="btn btn_cream">
+            <Inscription />
+          </MenuItem>
         </MenuMenu>
       )}
+
     </Menu>
   );
 }

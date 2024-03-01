@@ -13,9 +13,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('../../../assets/elements/background_ocre_fabrique.png') !important;
-    background-size: cover;
-    background-repeat: no-repeat;
+    
     &__accueil {
       background-color: rgba(255, 255, 255, 0.7);
       border-radius: 2rem;

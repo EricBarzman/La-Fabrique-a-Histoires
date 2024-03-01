@@ -1,4 +1,4 @@
-import { updateListStories } from './gameOptionsSlice';
+import { updateListStories } from '../gameOptionsSlice';
 
 /**
  * Va chercher sur l'API en BACK les données superficielles de TOUTES les histoires, sans leurs blocks

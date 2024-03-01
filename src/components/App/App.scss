@@ -1,2 +1,7 @@
 @use '@scssVariables' as v;
 
+.app-container {
+    background-image: url('../../../assets/elements/background_ocre_fabrique.png') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
