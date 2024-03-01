@@ -1,0 +1,8 @@
+@use '@scssVariables' as v;
+
+.container-mes_histoires {
+    margin: auto;
+    width : 75lvw;
+    display: flex;
+    flex-wrap: wrap;
+}

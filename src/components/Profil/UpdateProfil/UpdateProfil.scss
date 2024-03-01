@@ -1,0 +1,151 @@
+@use '@scssVariables' as v;
+
+.title-box {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+}
+
+#avatar-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+#avatar-image {
+  width: 15%;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+#input-file {
+  cursor: pointer; /* Indiquer qu'il est cliquable */
+}
+
+#champs {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+#confirm-password-profil {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+#informations-box {
+  max-width: none !important;
+  width: 30%;
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border: 1px solid v.$color_cream_main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#custom-form {
+  width: fit-content !important;
+}
+
+.FormField {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.Button {
+  align-self: flex-end;
+  margin-top: auto;
+  width: auto;
+}
+
+#annuler-btn {
+  margin-bottom: 1rem;
+}
+
+// Mobile
+@media only screen and (max-width: 767px) {
+  .title-box {
+    margin-bottom: 1rem;
+  }
+
+  #avatar-box {
+    width: 100%;
+  }
+
+  #avatar-image {
+    width: 30%;
+    margin-bottom: 0.5rem;
+  }
+
+  #informations-box {
+    width: 80%;
+  }
+
+  #confirm-password-profil {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .Button {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  #champs {
+    margin: 0.3rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Desktop
+@media only screen and (min-width: 768px) {
+  .title-box {
+    margin-bottom: 2rem;
+  }
+
+  #avatar-image {
+    width: 15%;
+    margin-bottom: 10px;
+  }
+
+  #informations-box {
+    width: 50%;
+  }
+
+  .Button {
+    align-self: flex-end;
+    margin-top: auto;
+    width: auto;
+  }
+
+  #annuler-btn {
+    margin-bottom: 1rem;
+  }
+
+  .FormField {
+    width: 100% !important; // Assurez-vous que les inputs occupent toute la largeur disponible
+    max-width: 300px; // Limitez la largeur maximale pour éviter qu'ils ne deviennent trop larges
+    margin: 0 auto; // Centrez les inputs horizontalement
+  }
+
+  .Input {
+    width: 100%; // Assurez-vous que les champs occupent toute la largeur disponible
+    max-width: 300px; // Limitez la largeur maximale des champs pour éviter qu'ils ne deviennent trop larges
+    margin: 0 auto; // Centrez les champs horizontalement
+  }
+
+  .Button {
+    width: auto; // Réinitialiser la largeur à auto pour les boutons
+    margin-top: 1rem; // Ajoutez un espace en haut du bouton
+  }
+}

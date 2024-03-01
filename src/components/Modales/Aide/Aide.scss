@@ -1,0 +1,63 @@
+@use '@scssVariables' as v;
+
+.left.menu > a.item:hover {
+  background-color: transparent !important; /* Rendre le fond transparent */
+  color: inherit !important; /* Conserver la couleur du texte par défaut */
+}
+.text-align_right {
+  text-align: right;
+}
+.modal-aide_section {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  margin: 3rem 0;
+  & div {
+    max-width: 80%;
+  }
+  & a, & i.big.icon {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+  }
+}
+.modal-aide_section_right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__icon {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  & i.big.icon {
+    margin-top: 0 !important;
+  }
+  &__paragraph {
+    max-width: 80%;
+  }
+}
+
+.blue-secondary {
+  color: v.$color_blue_secondary !important;
+}
+
+.ui {
+  &.black.button {
+    background-color: v.$color_blue_secondary !important;
+    border-radius: v.$border-radius;
+    &:hover {
+      border: 2px solid v.$color_blue_secondary !important;
+      color: v.$color_blue_secondary !important;
+      background-color: transparent !important;
+    }
+  }
+  &.fullscreen.modal>.header {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+  }
+}
+.jeu_fin-option-button {
+  cursor: pointer;
+}

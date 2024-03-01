@@ -1,0 +1,53 @@
+@use '@scssVariables' as v;
+
+.connexion-modal {
+  border: none !important;
+  background: none !important;
+  background: v.$color_cream_main !important;
+  color: v.$color_violet_main !important;
+}
+
+// Mobile
+@media only screen and (max-width: 767px) {
+  .logo-modal {
+    height: 5em;
+    margin: 1em auto;
+  }
+}
+
+// Desktop
+@media only screen and (min-width: 768px) {
+  .logo-modal {
+    height: 8em;
+    margin: 2em auto;
+  }
+}
+
+.modal-logo-title {
+  display: flex;
+}
+
+.ui.active.modal {
+  background-color: v.$color_ocre_tertiary;
+}
+
+.ui.active.modal > .header {
+    background-color: v.$color_ocre_tertiary;
+    color: v.$color_blue_secondary;
+}
+
+.ui.active.modal > .content {
+    background-color: v.$color_ocre_tertiary;
+    color: v.$color_blue_secondary
+}
+
+.ui.active.modal > .actions {
+    background-color: v.$color_ocre_tertiary;
+    color: v.$color_blue_secondary
+}
+
+.ui.active.modal > .field {
+    background-color: v.$color_ocre_secondary;
+    color: v.$color_blue_secondary
+}
+

@@ -1,0 +1,42 @@
+@use '@scssVariables' as v;
+
+// Mobile
+@media only screen and (max-width: 767px) {
+    .footer {
+        flex-direction: column;
+        padding: 0.5rem 0;
+
+        & .right.menu {
+            flex-direction: column;
+        }
+    }
+    .copyright {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+// Desktop
+@media only screen and (min-width: 768px) {
+    .footer__center {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }   
+    .ui.menu:not(.vertical) {
+        & :not(.dropdown)> {
+            & .left.menu, & .right.menu {
+                width: 50%;
+            }
+        }
+    }
+}
+
+.link {
+    color: v.$color_white !important;
+}
+
+.ui.secondary.menu .link.item:hover {
+    border-radius: v.$border-radius;
+    background: v.$color_cream_main_opacity !important;
+}

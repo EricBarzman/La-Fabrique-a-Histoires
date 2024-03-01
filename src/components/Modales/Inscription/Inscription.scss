@@ -1,0 +1,39 @@
+@use '@scssVariables' as v;
+
+
+// Mobile
+@media only screen and (max-width: 767px) {
+    .logo-modal {
+      height: 5em;
+      margin: 1em auto;
+    }
+  }
+  
+  // Desktop
+  @media only screen and (min-width: 768px) {
+    .logo-modal {
+      height: 8em;
+      margin: 2em auto;
+    }
+  }
+
+.ui.active.modal > .header {
+    background-color: v.$color_ocre_tertiary;
+    color: v.$color_blue_secondary;
+}
+
+.ui.active.modal > .content {
+    background-color: v.$color_ocre_tertiary;
+    color: v.$color_blue_secondary
+}
+
+.ui.active.modal > .actions {
+    background-color: v.$color_ocre_tertiary;
+    color: v.$color_blue_secondary
+}
+
+.ui.active.modal > .field {
+    background-color: v.$color_ocre_secondary;
+    color: v.$color_blue_secondary
+}
+

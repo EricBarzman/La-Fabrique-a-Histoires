@@ -1,0 +1,48 @@
+@use '@scssVariables' as v;
+
+#politique {
+  padding: 2rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  letter-spacing: 0.5px;
+  background-color: v.$color_cream_main !important;
+}
+
+#list {
+  padding-left: 2rem;
+  margin: 2rem;
+}
+
+ul {
+  list-style-type: disc !important; /* force à l'affichage des puces des li*/
+}
+
+li {
+  margin-bottom: 0.5rem; /* Ajuste l'espacement entre les les li */
+}
+
+
+// Mobile
+@media only screen and (max-width: 767px) {
+  #politique {
+    padding: 1rem; /* Réduire les paddings */
+    padding-left: 2rem; /* Réduire le padding gauche */
+    padding-right: 2rem; /* Réduire le padding droit */
+    font-size: 0.875rem; /* 14px / 16px = 0.875rem */ 
+
+    h1{
+      font-size: 1.5rem; /* 23px / 16px = 1.4375rem */
+    }
+
+    h2{
+      font-size: 1.20rem; /* 20px / 16px = 1.25rem */
+    }
+  }
+
+
+
+  #list {
+    padding-left: 1rem; /* Réduire le padding gauche */
+    margin: 1rem; /* Réduire la marge */
+  }
+}

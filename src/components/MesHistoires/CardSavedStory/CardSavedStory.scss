@@ -1,0 +1,45 @@
+@use '@scssVariables' as v;
+
+.cardstory {
+    width : 35%;
+}
+
+.cardstory__menu {
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.cardstory__menu-element-title {
+    background-color: v.$color_cream_main;
+    padding: 0.5rem;
+    border-radius: 10px;
+    color: v.$color_black_secondary;
+}
+
+.cardstory__menu-element-finished {
+    color: v.$color_blue_secondary;
+    padding: 0.3rem;
+    border-radius: 10px;
+    background-color: v.$color_cream_main_opacity;
+}
+
+.cardstory__button {
+    background-color: v.$color_cream_main;
+    color: v.$color_blue_secondary;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+
+    &:hover {
+        background-color: v.$color_blue_secondary;
+        color: v.$color_cream_main;
+    }
+}
+
+.cardstory__menu-wrapper {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}

@@ -1,0 +1,294 @@
+@use 'src/styles/variables' as v;
+
+// Mobile
+@media only screen and (max-width: 767px) {
+  .ui.stackable.menu {
+    flex-direction: row !important;
+    & .item {
+      margin-bottom: 0.2rem !important;
+      max-width: fit-content;
+      justify-content: center;
+    }
+    & .left.menu {
+      flex-direction: row !important;
+      justify-content: end;
+      & .item {
+        width: auto !important;
+      }
+    }
+  }
+
+  .ui.menu {
+    &:not(.vertical) > .menu {
+      width: auto;
+      min-width: 9rem;
+    }
+    & .item > img:not(.ui) {
+      max-width: fit-content;
+    }
+  }
+
+  // menu burger mobile (https://codepen.io/alvarotrigo/pen/yLzaPVJ)
+  #menu__toggle {
+    opacity: 0;
+  }
+  #menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+  }
+  .menu__btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+    transition-duration: 0.25s;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+  .menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: v.$color_ocre_secondary;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    transition-duration: 0.25s;
+  }
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: v.$color_blue_secondary;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 200;
+    text-decoration: none;
+    transition-duration: 0.25s;
+  }
+
+  .menu li {
+    margin-left: -20px;
+    color: v.$color_blue_secondary;
+  }
+
+  #menu .ui.button {
+    box-shadow: none !important;
+    font-family: 'Roboto', sans-serif;
+
+    :hover {
+      color: none !important;
+    }
+  }
+
+  // TODO
+  // hover à ajouter sur contact et politique
+  // car impossible d'enlever un hover déjà en important
+
+  #hamburger-menu .ui.button:hover {
+    color: #fffcf6 !important; // fonctionne pas
+  }
+
+  #hamburger-menu{ // menu toujours au dessus de tout
+    z-index: 9999;
+  }
+
+  p.menu__item {
+    display: inline-block;
+    width: 10.03rem;
+    height: 3.75rem;
+  }
+
+    //fin menu burger
+
+  .menu {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .menu .item a {
+    display: flex;
+    align-items: center; /* Si vous avez d'autres éléments à centrer verticalement */
+  }
+  
+  .menu .item a img {
+    max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la largeur de son conteneur */
+    align-self: center; /* Centre l'image verticalement */
+  }
+
+  #menu .left.menu a{
+    margin-top: 0.3rem;
+  }
+
+}
+
+// Desktop
+@media only screen and (min-width: 768px) {
+  .ui {
+    &.menu {
+      height: 5rem;
+      &:not(.vertical) .right.menu {
+        justify-content: end;
+      }
+    }
+  }
+
+  #menu {
+    padding-right: 1rem;
+    & .center {
+      width: 100%;
+      min-width: 10rem;
+      justify-content: center;
+    }
+    & .left {
+      padding-left: 1rem;
+    }
+  }
+
+  .btn {
+    margin: 0 0.2rem;
+  }
+}
+// End desktop
+
+#menu {
+  background-color: v.$color_ocre_secondary;
+  & .ui.button {
+    box-shadow: none !important;
+    background-color: transparent;
+    font-weight: 400;
+    color: v.$color_blue_secondary !important;
+    &:hover {
+      color: v.$color_cream_main !important;
+    }
+    // essai d'enlever le box shadow sur aide
+  }
+}
+
+.help.circle.big.disabled.icon {
+  margin-bottom: 0.5rem !important;
+  // pour aligner avec les autres
+}
+
+.ui.menu .link.item:hover, .ui.menu a.item:hover {
+  background-color: transparent !important; /* Rendre le fond transparent */
+}
+
+.btn {
+  border: none !important;
+  border-radius: v.$border-radius !important;
+  cursor: pointer;
+  height: 3rem;
+  width: 9rem;
+  margin: 0 0.1rem;
+  font-weight: bold;
+  //blur sur border
+  // -webkit-backdrop-filter: blur(10px);
+  &:hover {
+    background: transparent !important;
+  }
+}
+
+.btn_cream {
+  background-color: v.$color_cream_main !important;
+  color: v.$color_blue_secondary !important;
+  &:hover {
+    border: 2px solid v.$color_cream_main !important;
+    color: v.$color_cream_main !important;
+  }
+}
+
+.ui {
+  & .menu {
+    border: none !important;
+    border-radius: 0 !important;
+    display: flex;
+    align-items: center;
+    & .item {
+      & > i.icon:hover,
+      i.big.icon:hover {
+        cursor: pointer;
+      }
+      &:before {
+        display: none;
+      }
+      & > img:not(.ui) {
+        width: 100% !important;
+      }
+    }
+    &:not(.vertical) {
+      & .right.menu {
+        align-items: center;
+      }
+      & .item {
+        padding: 0;
+        justify-content: center;
+      }
+    }
+  }
+
+  & .secondary.menu {
+    background-color: v.$color_ocre_secondary !important;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.ui.menu:not(.vertical) > .menu {
+  width: 100%;
+}
+
+#menu {
+  justify-content: center;
+  & .logo {
+    justify-content: center;
+  }
+}
+
+.right :not(.vertical) .item {
+  margin: 0 0.2rem;
+}
+
+.item i.disabled.icon {
+  color: v.$color_cream_main;
+}
+
+.ui.menu {
+  & a.item:hover {
+    background: transparent !important;
+  }
+  & .link.item:hover {
+    background: transparent;
+  }
+}

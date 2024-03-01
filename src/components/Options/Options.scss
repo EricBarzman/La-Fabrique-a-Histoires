@@ -1,0 +1,126 @@
+@use '@scssVariables' as v;
+
+// Buttons
+.btn_green {
+    background-color: v.$color_green;
+    color: v.$color_white;
+    &:hover {
+        border: 2px solid v.$color_green !important;
+        color: v.$color_green;
+    }
+}
+
+.btn_grey {
+    background-color: v.$color_grey;
+    color: v.$color_white;
+    &:hover {
+        border: 2px solid v.$color_grey !important;
+        color: v.$color_grey;
+    }
+}
+
+.btn_marron {
+    background-color: v.$color_marron;
+    color: v.$color_white;
+    &:hover {
+        border: 2px solid v.$color_marron !important;
+        color: v.$color_marron;
+    }
+}
+
+.btn_blue {
+    background-color: v.$color_blue_secondary;
+    color: v.$color_white;
+    &:hover {
+        border: 2px solid v.$color_blue_secondary !important;
+        color: v.$color_blue_secondary;
+    }
+}
+
+// Colors
+.pastel-green {
+    color: v.$color_green;
+}
+
+.grey {
+    color: v.$color_grey;
+}
+
+.marron {
+    color: v.$color_marron;
+}
+
+.white, ::placeholder {
+    color: v.$color_white !important;
+}
+
+.ocre {
+    color: v.$color_ocre_secondary;
+}
+
+.violet_main {
+    color: v.$color_violet_main;
+}
+// End colors
+
+// Margins
+.margin-bottom_1 {
+    margin-bottom: v.$margin-bottom_1 !important;
+}
+.margin-top_3 {
+    margin-top: v.$margin-top_3 !important;
+}
+.margin-top_4 {
+    margin-top: v.$margin-top_4 !important;
+}
+
+.margin-left_1 {
+    margin-left: v.$margin-left_1 !important;
+}
+// End margins
+
+.center {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.play {
+    margin-top: v.$margin-top_3;
+}
+
+.level-item {
+    margin: 2rem;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+#name-male, #name {
+    text-align: center;
+}
+
+#name-female, #name {
+    text-align: center;
+}
+
+.options__level-container {
+    padding : 2rem;
+}
+
+.theme-vignette {
+    width : 50%;
+}
+
+@media only screen and (max-width: 767px) {
+    .options__level-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,21 @@
+@use '@scssVariables' as v;
+
+@media only screen and (max-width: 767px) {
+    .storylist-title {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        padding: 1rem;
+        background-color: v.$color_ocre_tertiary;
+        border-radius: 25px;
+    }
+}
+
+// Desktop
+@media only screen and (min-width: 767px) {
+    .storylist-title {
+        margin-top: 1rem;
+        padding: 1rem;
+        background-color: v.$color_ocre_tertiary;
+        border-radius: 25px;
+    }
+}

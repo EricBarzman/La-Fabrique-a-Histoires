@@ -1,0 +1,55 @@
+@use '@scssVariables' as v;
+
+.container {
+  min-height: 90vh;
+  background-color: v.$color_ocre_secondary;
+  &__game {
+    min-height: 90vh;
+  }
+  &__centered {
+    text-align: center;
+    min-height: 90vh;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../../../assets/elements/background_ocre_fabrique.png') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &__accueil {
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 2rem;
+      padding: 1rem;
+    }
+  }
+  &__game-page {
+    text-align: center;
+    min-height: 90vh;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.title {
+  font-family: v.$font-family_main;
+  color: v.$color_blue_secondary;
+}
+
+.btn__blue {
+  background-color: v.$color_blue_secondary;
+  color: v.$color-white;
+  text-align: center;
+  &:hover {
+    border: 2px solid v.$color_blue_secondary !important;
+    color: v.$color_blue_secondary;
+  }
+}
+
+.ui.menu {
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+}

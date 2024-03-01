@@ -1,0 +1,43 @@
+@use 'src/styles/variables' as v;
+
+.thumbnail {
+    width: 18em;
+}
+
+.cardstory-container {
+    display: flex;
+    width : 80%;
+    flex-wrap: wrap;
+    margin : auto;
+    padding: 3rem;
+    background-color: rgba(255, 255, 128, .1);;
+}
+
+.cardstory {
+    background-color: v.$color_ocre_tertiary;
+    padding: 1rem;
+    border-radius: 30px;
+    margin : 1rem;
+}
+
+.storyTitle {
+    margin-top : 1rem;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    color: v.$color_blue_secondary;
+    background-color: v.$color_ocre_secondary;
+
+    &:hover {
+        color: v.$color_ocre_tertiary;
+        background-color: v.$color_cream_main;
+        transition: 0.2s;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    .cardstory {
+        width: 90% !important;
+    }
+}

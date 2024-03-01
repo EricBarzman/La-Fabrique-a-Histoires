@@ -1,0 +1,163 @@
+@use 'src/styles/variables' as v;
+
+.container__game {
+    width : 100%;
+    height: 100%;
+}
+
+.container__game-page {
+    width : 100%;
+    height: 100%;
+}
+
+#jeu__background {
+    width: 100vw;
+    height : 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    justify-content: end;
+
+    & .icon-close {
+        width: 100%;
+        display: flex;
+    }
+
+    & .button, .button__choice {
+        margin-bottom: v.$margin-bottom_1;
+    }
+}
+  
+.jeu__bulle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    position: relative;
+    top: 16%;
+}
+
+#bubble {
+    position: absolute;
+    top: 10%;
+    right: 1%;
+    background-color: white;
+    text-align: center;
+    padding: 1.5em 2em;
+    max-width: 40%;
+    border: 2px solid lightgrey;
+    border-top-right-radius: 80px 40px;
+    border-top-left-radius: 80px 40px;
+    border-bottom-right-radius: 80px 40px;
+    border-bottom-left-radius: 80px 40px;
+    & #arrow_inner {
+        width: 0;
+            height: 0;
+        line-height: 0;
+        border-bottom: 30px solid transparent;
+        border-left: 30px solid white;
+        border-right: 30px solid transparent;
+        position: absolute;
+        bottom: -25px;
+        right: 30%;
+    }
+}
+
+.jeu__question-and-choices {
+    // width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jeu__question {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 75%;
+    margin-bottom: 1em;
+    font-size: 1.3em;
+    font-weight: 700;
+    padding : 2em 1em;
+}
+
+.jeu__choix-container {
+    width: 100%;
+    margin-bottom: 3em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jeu__choix-button {
+    font-weight: 700;
+    font-size: 1.2em;
+    padding: 1.5rem 2rem;
+    margin : 0 1em;
+    border-radius: 30px;
+    background-color: rgba(96, 133, 255, 0.6);
+    color: v.$color_blue_secondary;
+    border: solid 2px v.$color_blue_secondary;
+    &:hover {
+        border:x solid v.$color_white !important;
+        color: v.$color_blue_secondary;
+        background-color: rgba(255, 255, 255, 0.7) !important;
+        transition: 0.2s;
+    }
+}
+
+.jeu__permanent-quit-button {
+    position: absolute;
+    bottom: 3%;
+    left: 3%;
+}
+
+.jeu__permanent-save-button {
+    position: absolute;
+    bottom: 3%;
+    right: 3%;
+}
+
+.jeu__replay-button {
+    margin-bottom: 3em;
+    background-color: v.$color_ocre_secondary;
+    color: v.$color_marron;
+    border: solid 2px v.$color_marron;
+    &:hover {
+        border:x solid v.$color_white !important;
+        color: v.$color_ocre_secondary;
+        background-color: rgba(255, 255, 255, 0.7) !important;
+        transition: 0.2s;
+    }
+}
+
+.jeu__fin-container {
+    margin-bottom: 2.5em;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jeu__fin-options {
+    margin-top: 1em;
+    width : 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+// Mobile
+@media only screen and (max-width: 767px) {
+    #bubble {
+        width: 80%;
+
+        & #arrow_inner {
+            right: 4em;
+        }
+    }
+
+    .jeu__choix-button {
+        font-size: 1em;
+        padding: 1.3rem 1.5rem;
+        margin : 0 1em;
+    }
+}
