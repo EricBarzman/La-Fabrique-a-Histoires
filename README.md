@@ -6,8 +6,7 @@ Une application pour les enfants de 3 à 6 ans (accompagnés de leurs parents !)
 
 ### Origine du projet
 
-Ce projet est la continuation d'un travail collectif réalisé lors de ma formation webdev chez O'Clock. Le projet devait être finalisé sous un mois.
-J'ai retravaillé l'UI/UX et nettoyé le code pour aboutir à une version plus fonctionnelle.
+Ce projet est la continuation d'un travail collectif réalisé en formation webdev chez O'Clock. Le projet devait être finalisé sous un mois.
 
 ## Installation
 
