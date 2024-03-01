@@ -4,7 +4,7 @@
 
 Une application pour les enfants de 3 à 6 ans (accompagnés de leurs parents !) pour jouer à des jeux "dont vous êtes le héros", et ainsi créer de véritables histoires à se raconter !
 
-## Origine du projet
+### Origine du projet
 
 Ce projet est la continuation d'un travail collectif réalisé lors de ma formation webdev chez O'Clock. Le projet devait être finalisé sous un mois.
 J'ai retravaillé l'UI/UX et nettoyé le code pour aboutir à une version plus fonctionnelle.
