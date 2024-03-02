@@ -33,10 +33,8 @@ function Aide() {
           />
         </Button>
       }
-      // ici pour mettre l'îcone pour qu'elle soit le "button" ?
-      // c'est bien ici qu'été écrit "Aide" et donc s'affichait sur le DOM
     >
-      <Modal.Header>
+      <Modal.Header className="aide__title">
         Aide
         <Icon
           name="close"
@@ -50,11 +48,11 @@ function Aide() {
         <ModalDescription>
           <div className="modal-aide_section">
             <div>
-              <Header className="blue-secondary">Comment jouer ?</Header>
+              <Header className="blue-secondary aide__title">Comment jouer ?</Header>
               <p>
-                Tu peux d'abord te créer un compte, si tu veux, mais tu peux aussi jouer sans.
-                <br/>Choisis les options de ton jeu. Tu pourras alors choisir les histoires qui correspondent.
-                Tu dois alors cliquer sur le bouton "Je joue !" pour lancer le jeu !
+                Tu peux te créer un compte ou tu peux jouer sans.
+                <br/>Choisis les options de ton jeu, puis une histoire parmi celles proposées.
+                Cliquer sur le bouton "Je joue !" pour lancer le jeu.
                 Il ne te reste plus qu'à commencer l'aventure !
               </p>
             </div>
@@ -80,15 +78,13 @@ function Aide() {
               />
             </div>
             <div className="modal-aide_section_right__paragraph">
-              <Header className="blue-secondary">
+              <Header className="blue-secondary aide__title">
                 Utiliser les flèches de gauche et de droite
               </Header>
               <p>
-                Au fur et à mesure de la création de ton histoire, tu verras
-                apparaître deux flèches, à gauche et à droite. La
-                flèche de gauche te permet de revenir en arrière d'une étape,
-                la flèche de droite d'aller à l'étape suivante,
-                celle que tu avais déjà joué. Essaie ! Tu vas voir, c'est très
+                Durant ton histoire, tu verras
+                deux flèches, à gauche et à droite. Celle de gauche te permet de revenir en arrière d'une étape,
+                celle de droite d'aller à l'étape suivante. Essaie ! Tu vas voir, c'est très
                 simple ! Tu peux revenir en arrière pour changer ta
                 décision lors d'un choix, par exemple.
               </p>
@@ -96,16 +92,16 @@ function Aide() {
           </div>
           <div className="modal-aide_section">
             <div>
-              <Header className="blue-secondary">
+              <Header className="blue-secondary aide__title">
                 A quoi sert le compte ?
               </Header>
               <p>
-                Avoir un compte te permet, si tu le veux, d'enregistrer
+                Avoir un compte te permet d'enregistrer
                 l'histoire à laquelle tu joues, même si elle n'est pas finie.
-                Puis la retrouver dans l'onglet Mes histoires
-                (tu y accèdes en cliquant sur l'icone livre dans le menu
-                ou bien dans ton profil). Tu peux alors rejouer autant de fois que tu le
-                souhaites les histoires que tu as créées et même les
+                Puis la retrouver dans Mes histoires
+                (tu y accèdes en cliquant sur le livre dans le menu
+                ou bien dans ton profil). Tu peux rejouer autant de fois que tu le
+                souhaites les histoires que tu as créées, et même les
                 modifier ! Papa ou maman peuvent également se créer leur profil
                 et le faire à ta place si tu es trop petit.
               </p>
@@ -129,7 +125,7 @@ function Aide() {
               />
             </div>
             <div className="modal-aide_section_right__paragraph">
-              <Header className="blue-secondary">Sauvegarder</Header>
+              <Header className="blue-secondary aide__title">Sauvegarder</Header>
               <p>
                 Comment sauvegarder une histoire ? Si tu as un compte, tu
                 verras pendant une histoire et à la fin une icône de disquette.
@@ -141,7 +137,7 @@ function Aide() {
 
           <div className="modal-aide_section">
             <div>
-              <Header className="blue-secondary">Rejouer</Header>
+              <Header className="blue-secondary aide__title">Rejouer</Header>
               <p>
                 Tu peux rejouer une histoire dès que tu l'as finie !
                 Fais aussi attention à la sauvegarder, sinon tu ne pourras pas la

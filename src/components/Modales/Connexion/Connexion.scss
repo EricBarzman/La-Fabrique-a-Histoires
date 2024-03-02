@@ -7,6 +7,11 @@
   color: v.$color_violet_main !important;
 }
 
+.ui.dimmer {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+
 // Mobile
 @media only screen and (max-width: 767px) {
   .logo-modal {

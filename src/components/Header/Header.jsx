@@ -16,7 +16,7 @@ import BurgerMenu from './BurgerMenu';
 function Header() {
   const [helpOpen, setHelpOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false); // Téléphone
-
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isLogged = useSelector((state) => state.user.logged);
@@ -49,13 +49,20 @@ function Header() {
   return (
     <Menu stackable className="menu" id="menu">
 
-      <MenuMenu className="logo">
-        <MenuItem>
-          <Link to="/">
-            <img src={logo} className="header-logo" alt="Logo" />
-          </Link>
-        </MenuItem>
-      </MenuMenu>
+      {isMobile && (
+        <MenuMenu position="left_mobile">
+          <BurgerMenu/>
+        </MenuMenu>
+      )}
+
+      {!isMobile && (
+        <MenuItem name="AccueilDesktop" className="link">
+        <Link to="/">
+          <img className='header__mes-histoires-icon' src="/assets/elements/logo2.png" alt="Accueil" />
+        </Link>
+      </MenuItem>
+      )}
+      
 
       <MenuMenu >  
         {isLogged && (
@@ -65,13 +72,20 @@ function Header() {
               </Link>
             </MenuItem>
         )}
-        
         {!isMobile && (
           <Menu.Item onClick={toggleHelp}>
             <Aide />
           </Menu.Item>
         )}
 
+      </MenuMenu>
+
+      <MenuMenu className="logo">
+        <MenuItem>
+          <Link to="/">
+            <img src={logo} className="header-logo" alt="Logo" />
+          </Link>
+        </MenuItem>
       </MenuMenu>
 
       {isLogged ? (

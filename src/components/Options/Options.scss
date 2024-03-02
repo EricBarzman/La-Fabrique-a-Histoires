@@ -37,6 +37,15 @@
     }
 }
 
+.level {
+    font-size: 1.3em;
+    border-radius: 50%;
+}
+
+.level__icon {
+    width: 150px;
+}
+
 // Colors
 .pastel-green {
     color: v.$color_green;

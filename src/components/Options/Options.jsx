@@ -29,70 +29,69 @@ function Options() {
 
   return (
     <div className="container__centered">
-      {isContentVisible && (
-        <>
-          <h1 className="title">Quel niveau veux-tu relever ?</h1>
-          <div className="flex margin-top_4 options__level-wrapper">
-            <div className="center level-item">
-              <Icon
-                name="asl"
-                alt="asl icon"
-                size="big"
-                className="margin-bottom_1 pastel-green"
-              />
-              <button
-                value={1}
-                type="button"
-                className="btn btn_green"
-                onClick={handleClick}
-              >
-                Facile
-              </button>
+      <div className="container__centered__accueil">
+        {isContentVisible && (
+          <>
+            <h1 className="title">Quel niveau veux-tu relever ?</h1>
+            <div className="flex margin-top_4 options__level-wrapper">
+              <div className="center level-item">
+                <img
+                  className='level__icon'
+                  src="/assets/elements/easy.jpg"
+                  alt="facile"
+                />
+                <button
+                  value={1}
+                  type="button"
+                  className="btn btn_green level"
+                  onClick={handleClick}
+                >
+                  3-4 ans
+                </button>
+              </div>
+              <div className="center level-item">
+                <img
+                  className='level__icon'
+                  src="/assets/elements/medium.jpg"
+                  alt="moyen"
+                />
+                <button
+                  value={2}
+                  type="button"
+                  className="btn btn_grey level"
+                  onClick={handleClick}
+                >
+                  4-5 ans
+                </button>
+              </div>
+              <div className="center level-item">
+                <img
+                  className='level__icon'
+                  src="/assets/elements/hard.jpg"
+                  alt="difficile"
+                />
+                <button
+                  value={3}
+                  type="button"
+                  className="btn btn_marron level"
+                  onClick={handleClick}
+                >
+                  5-6 ans
+                </button>
+              </div>
             </div>
-            <div className="center level-item">
-              <Icon
-                name="hand peace outline"
-                alt="hand icon"
-                size="big"
-                className="margin-bottom_1 grey"
-              />
-              <button
-                value={2}
-                type="button"
-                className="btn btn_grey"
-                onClick={handleClick}
-              >
-                Intermédiaire
-              </button>
-            </div>
-            <div className="center level-item">
-              <Icon
-                name="bolt"
-                alt="bolt icon"
-                size="big"
-                className="margin-bottom_1 marron"
-              />
-              <button
-                value={3}
-                type="button"
-                className="btn btn_marron"
-                onClick={handleClick}
-              >
-                Difficile
-              </button>
-            </div>
-          </div>
-        </>
-      )}
-      {/* Level content */}
-      {!isContentVisible && <ChoixThemes />}
-      <Icon
-        name="arrow alternate circle left outline"
-        alt="arrow icon"
-        size="big"
-        className="ocre center margin-top_4 pointer"
-        onClick={() => navigate(-1)}
-      />
+          </>
+        )}
+        {/* Level content */}
+        {!isContentVisible && <ChoixThemes />}
+        <Icon
+          name="arrow alternate circle left outline"
+          alt="arrow icon"
+          size="big"
+          className="ocre center margin-top_4 pointer"
+          onClick={() => navigate(-1)}
+        />
+      </div>
     </div>
   );
 }

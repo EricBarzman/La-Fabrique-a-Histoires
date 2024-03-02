@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { Icon } from 'semantic-ui-react';
 import { updateState } from '../../store/gameOptionsSlice';
 import Personnage from './Personnage';
 
@@ -39,7 +38,11 @@ export default function ChoixThemes() {
           <div className="flex margin-top_4 options__level-wrapper">
             {possibleThemes.map((theme) => (
               <div className="center options__level-container" key={theme.id}>
-                <img src={theme.thumbnail_path} alt="vignette thème" className='theme-vignette' />
+                <img
+                  src={theme.thumbnail_path}
+                  alt="vignette thème"
+                  className="theme-vignette"
+                />
                 <button
                   value={theme.id}
                   type="button"

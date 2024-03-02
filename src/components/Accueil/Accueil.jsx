@@ -8,10 +8,11 @@ function Accueil() {
     <div className="container__centered">
       <div className="container__centered__accueil">
         <h1 className="title">
-          {firstname ? `Bienvenue, ${firstname} !` : 'Bienvenue !'}
+          {firstname ? `Bienvenue, ${firstname}, à la` : 'Bienvenue à la'}
         </h1>
+        <img className='title__logo' src="/assets/elements/logo-complet-ss-bg.png" alt="logo" />
         <h2 className="title">
-          Laisse libre cours à ton imagination et créé toi-même tes propres
+          Laisse libre cours à ton imagination<br/> et créé toi-même tes propres
           histoires !
         </h2>
         <h3 className="title">Es-tu prêt(e) à relever le défi ?</h3>

@@ -1,14 +1,12 @@
 @use '@scssVariables' as v;
 
 .container {
-  min-height: 90vh;
-  background-color: v.$color_ocre_secondary;
   &__game {
-    min-height: 90vh;
   }
+
   &__centered {
+    margin: 1rem;
     text-align: center;
-    min-height: 90vh;
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -17,12 +15,13 @@
     &__accueil {
       background-color: rgba(255, 255, 255, 0.7);
       border-radius: 2rem;
-      padding: 1rem;
+      padding: 2rem 5rem;
+      min-height: 80vh;
     }
   }
   &__game-page {
     text-align: center;
-    min-height: 90vh;
+    // min-height: 90vh;
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -34,6 +33,11 @@
 .title {
   font-family: v.$font-family_main;
   color: v.$color_blue_secondary;
+}
+
+.title__logo {
+  width: 60%;
+  margin: auto;
 }
 
 .btn__blue {

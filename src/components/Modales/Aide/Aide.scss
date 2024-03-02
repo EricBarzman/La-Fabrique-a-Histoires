@@ -1,5 +1,15 @@
 @use '@scssVariables' as v;
 
+.ui.dimmer {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+
+.aide__title {
+  font-size: 1.5rem;
+}
+
+
 .left.menu > a.item:hover {
   background-color: transparent !important; /* Rendre le fond transparent */
   color: inherit !important; /* Conserver la couleur du texte par défaut */
