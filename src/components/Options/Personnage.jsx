@@ -50,14 +50,12 @@ export default function Personnage() {
     <>
       {isContentVisible && (
         <>
-          <h1 className="title">Choisis ton personnage et son prénom</h1>
+          <h1 className="title">Fille ou garçon ? Comment t'appelles-tu ?</h1>
           <div className="flex margin-top_4 options__level-wrapper">
             <div className="center options__level-container">
-              <Icon
-                name="male"
-                alt="male icon"
-                size="big"
-                className="margin-bottom_1 pastel-green"
+              <img
+               src={`/assets/elements/boy${Math.ceil(3 * Math.random())}.jpg`}
+               alt="boy"
               />
               <input
                 type="text"
@@ -74,11 +72,9 @@ export default function Personnage() {
               />
             </div>
             <div className="center">
-              <Icon
-                name="female"
-                alt="female"
-                size="big"
-                className="margin-bottom_1 grey"
+              <img
+               src={`/assets/elements/girl${Math.ceil(3 * Math.random())}.jpg`}
+               alt="girl"
               />
               <input
                 type="text"
@@ -87,7 +83,7 @@ export default function Personnage() {
                 minLength="4"
                 maxLength="18"
                 size="18"
-                className="btn btn_grey"
+                className="btn btn_marron"
                 placeholder="Ton prénom"
                 onClick={handleFemaleClick}
                 onChange={handleFemaleInputChange}
