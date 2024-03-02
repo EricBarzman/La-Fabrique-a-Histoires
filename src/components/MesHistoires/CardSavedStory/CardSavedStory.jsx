@@ -82,9 +82,9 @@ export default function CardSavedStory({ savedStory }) {
         alt="vignette de la sauvegarde"
       />
       <div className="cardstory__menu">
-        <div className="cardstory__menu-element-title">
+        {/* <div className="cardstory__menu-element-title">
           {savedStory.saved_story_name}
-        </div>
+        </div> */}
         <div className="cardstory__menu-element-finished">
           {isStoryFinished ? 'Terminé !' : 'Pas finie'}
         </div>

@@ -1,16 +1,17 @@
 @use 'src/styles/variables' as v;
 
 #menu {
-  height: 10vh;
+  height: 10lvh;
 }
 
 .right.menu {
   display: flex;
-  flex-direction: row;
+  flex-direction: row !important;
 }
 
 // Mobile
 @media only screen and (max-width: 767px) {
+  
   .ui.stackable.menu {
     flex-direction: row !important;
     & .item {
@@ -28,9 +29,10 @@
   }
 
   .ui.menu {
+
     &:not(.vertical) > .menu {
-      width: auto;
-      // min-width: 9rem;
+      width: 30%;
+      // min-width: 3rem;
     }
     & .item > img:not(.ui) {
       max-width: fit-content;
@@ -124,10 +126,6 @@
       color: none !important;
     }
   }
-
-  // TODO
-  // hover à ajouter sur contact et politique
-  // car impossible d'enlever un hover déjà en important
 
   #hamburger-menu .ui.button:hover {
     color: #fffcf6 !important; // fonctionne pas
@@ -285,7 +283,7 @@
 #menu {
   justify-content: center;
   & .logo {
-    // justify-content: center;
+    justify-content: center;
   }
 }
 
@@ -308,5 +306,13 @@
 
 
 .header__mes-histoires-icon {
-  width: 45px;
+  width: 60px;
+}
+
+.header__home {
+  width : 60px;
+}
+
+.header__home-container {
+  border: none !important;
 }

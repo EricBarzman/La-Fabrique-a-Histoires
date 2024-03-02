@@ -1,5 +1,9 @@
 @use '@scssVariables' as v;
 
+.container__centered {
+    height: 80lvh;
+}
+
 .container-mes_histoires {
     margin: auto;
     width : 75lvw;

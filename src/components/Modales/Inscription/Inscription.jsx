@@ -88,22 +88,6 @@ function Inscription() {
       <Modal.Content>
         <Form>
           <FormGroup widths="equal">
-            <FormField>
-              <label htmlFor="avatar">
-                Mon Avatar
-                <Input
-                  type="file"
-                  onChange={(e) => setAvatar(e.target.files[0])}
-                />
-                {avatar && (
-                  <Image
-                    src={URL.createObjectURL(avatar)}
-                    size="small"
-                    rounded
-                  />
-                )}
-              </label>
-            </FormField>
             <FormField
               control={Input}
               label="Mon prénom *"

@@ -1,12 +1,16 @@
 @use '@scssVariables' as v;
 
 // Buttons
-.btn_green {
-    background-color: v.$color_green;
-    color: v.$color_white;
+.btn_ocre {
+    background-color: v.$color_ocre_secondary;
+    color: v.$color_white !important;
+    padding : 1em;
+    margin-top: 1em;
+    font-size: 1.2em;
     &:hover {
-        border: 2px solid v.$color_green !important;
-        color: v.$color_green;
+        border: 2px solid v.$color_marron !important;
+        color: v.$color_green !important;
+        background-color: v.$color_ocre_tertiary !important;
     }
 }
 

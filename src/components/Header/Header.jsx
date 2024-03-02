@@ -56,16 +56,16 @@ function Header() {
       )}
 
       {!isMobile && (
-        <MenuItem name="AccueilDesktop" className="link">
+        <MenuItem name="AccueilDesktop" className='header__home-container' >
         <Link to="/">
-          <img className='header__mes-histoires-icon' src="/assets/elements/logo2.png" alt="Accueil" />
+          <img className='header__home' src="/assets/elements/logo2.png" alt="Accueil" />
         </Link>
       </MenuItem>
       )}
       
 
       <MenuMenu >  
-        {isLogged && (
+        {isLogged && !isMobile && (
             <MenuItem name="MesHistoiresDesktop" className="link">
               <Link to="/mes_histoires">
                 <img className='header__mes-histoires-icon' src="/assets/elements/favicon-ss-bg.ico" alt="mes-histoires-icon" />
@@ -80,7 +80,7 @@ function Header() {
 
       </MenuMenu>
 
-      <MenuMenu className="logo">
+      <MenuMenu className="logo" position='center'>
         <MenuItem>
           <Link to="/">
             <img src={logo} className="header-logo" alt="Logo" />

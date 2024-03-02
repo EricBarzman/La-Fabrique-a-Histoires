@@ -65,7 +65,7 @@ export default function Personnage() {
                 maxLength="18"
                 size="18"
                 placeholder="Ton prénom"
-                className="btn btn_green"
+                className="btn btn_ocre"
                 onClick={handleMaleClick}
                 onChange={handleMaleInputChange}
                 value={inputMaleValue}
@@ -83,7 +83,7 @@ export default function Personnage() {
                 minLength="4"
                 maxLength="18"
                 size="18"
-                className="btn btn_marron"
+                className="btn btn_ocre"
                 placeholder="Ton prénom"
                 onClick={handleFemaleClick}
                 onChange={handleFemaleInputChange}
